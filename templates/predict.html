@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Predictor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Health Predictor</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/predict">Predict</a>
+        <a href="/recommendations">Recommendations</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </nav>
+    <main class="container">
+        <div class="card">
+            <form action="/api/predict" method="post">
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="age" name="age" required>
+                </div>
+                <div class="mb-3">
+                    <label for="weight" class="form-label">Weight (kg)</label>
+                    <input type="number" step="0.1" class="form-control" id="weight" name="weight" required>
+                </div>
+                <div class="mb-3">
+                    <label for="height" class="form-label">Height (cm)</label>
+                    <input type="number" step="0.1" class="form-control" id="height" name="height" required>
+                </div>
+                <div class="mb-3">
+                    <label for="medical_history" class="form-label">Medical History</label>
+                    <textarea class="form-control" id="medical_history" name="medical_history"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="lifestyle_factors" class="form-label">Lifestyle Factors</label>
+                    <textarea class="form-control" id="lifestyle_factors" name="lifestyle_factors"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </main>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
